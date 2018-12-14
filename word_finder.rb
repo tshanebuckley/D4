@@ -15,6 +15,7 @@ paths = g.find_paths
 paths = paths.in_groups(4)
 # puts(paths.size)
 perms = Parallel.map(paths, in_processes: 4) do |x|
+  # puts(x)
   x.map(&:permutations)
 end
 perms = perms.flatten
